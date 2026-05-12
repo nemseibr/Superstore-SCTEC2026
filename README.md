@@ -28,7 +28,7 @@ Realizar a análise de dados da base **Sample Superstore**, identificando padrõ
 ```bash
 📁 superstore-analise
 │
-├── notebook.ipynb
+├── analise_de_vendas_Superstore.ipynb
 ├── dados_tratados.csv
 ├── README.md
 └── Sample - Superstore.csv
