@@ -466,47 +466,73 @@ Utilizar tendências temporais para:
 
 ---
 
-# ▶️ Guia de Execução
+## ▶️ Guia de Execução
 
-## 1. Ambiente
+### 🔹 Opção 1 — Google Colab
+1. **Ambiente**  
+   - Abra o [Google Colab](https://colab.research.google.com)
+   - Utilizando o Colab, abra o arquivo localizado na pasta de seu desktop com o nome: Analise_de_vendas_Superstore1
+   - Alternativamente, pode usar Jupyter Notebook.
 
-Utilize:
+2. **Upload do Dataset**  
+   - Faça upload do arquivo `Sample - Superstore.csv` para o Colab.
 
-* Google Colab
-* Jupyter Notebook
+3. **Executar o Notebook**  
+   - Vá em **Runtime → Run All** para rodar todas as células em ordem.
 
----
-
-## 2. Upload do Dataset
-
-Faça upload do arquivo:
-
-```bash
-Sample - Superstore.csv
-```
-
----
-
-## 3. Execute o Notebook
-
-Execute todas as células em ordem:
-
-```bash
-Runtime → Run All
-```
+4. **Resultado**  
+   - O Colab irá solicitar que anexe o arquivo Sample - Superstore.csv
+   - Depois de anexado o Colab irá seguir com o restante dos códigos.
+   - No final, será gerado o arquivo `dados_tratados.csv` para download, com os dados limpos e preparados para BI.
 
 ---
 
-## 4. Resultado
+### 🔹 Opção 2 — VS Code (Windows)
+1. **Ambiente**  
+   - Instale [Python](https://www.python.org/downloads/) e [Visual Studio Code](https://code.visualstudio.com).
+   - Abra o programa VSCODE
+   - Instale as bibliotecas necessárias no terminal do VS Code:  
+     ```bash
+     pip install pandas numpy matplotlib seaborn plotly
+     ```
 
-Ao final será gerado:
+2. **Organização da Pasta**  
+   - Crie uma pasta no **Desktop (área de trabalho)** e faça o download da pasta chamada `Superstore-SCTEC2026`.  
+   - Feito o download verifique se os sequinges arquivos estão dentro dela:  
+     - O script `analise_de_vendas_Superstore.py`  
+     - O dataset `Sample - Superstore.csv`
 
-```bash
-dados_tratados.csv
-```
+3. **Executar o Script**  
+   - Abra o VS Code e o terminal integrado (**Ctrl+`**).  
+   - Navegue até a pasta do projeto:  
+     ```powershell
+     cd C:\Users\SEU_USUARIO\Desktop\Superstore-SCTEC2026
+     ```
+     Antes de executar o script certifique-se que tenha executado o comando no terminal:
+      pip install pandas numpy matplotlib seaborn plotly
+     
+   - Execute o script:  
+     ```powershell
+     python analise_de_vendas_Superstore.py
+     ```
 
-Com todos os dados tratados e preparados.
+4. **Resultado**  
+   - O script irá gerar o arquivo `dados_tratados.csv` na mesma pasta.  
+   - Os gráficos aparecerão em janelas interativas (matplotlib) ou no navegador (plotly).
 
+---
+
+## 📂 Estrutura do Projeto
+- `analise_de_vendas_Superstore.py` → Script principal de análise  
+- `Sample - Superstore.csv` → Dataset original  
+- `dados_tratados.csv` → Dataset tratado e exportado  
+
+---
+
+## 📌 Observações
+- No **Colab**, o upload e download são feitos diretamente na interface.  
+- No **VS Code**, os arquivos ficam salvos na pasta do projeto no Desktop.  
+- Certifique-se de instalar todas as bibliotecas antes de executar o script localmente.
 ---
 
 # 📊 Dashboard no Looker Studio
