@@ -499,7 +499,7 @@ Utilizar tendências temporais para:
 2. **Organização da Pasta**  
    - Crie uma pasta no **Desktop (área de trabalho)** e faça o download da pasta chamada `Superstore-SCTEC2026`.  
    - Feito o download verifique se os sequinges arquivos estão dentro dela:  
-     - O script `analise_de_vendas_Superstore.py`  
+     - O script `Analise_de_vendas_Superstore2.py`  
      - O dataset `Sample - Superstore.csv`
 
 3. **Executar o Script**  
@@ -513,7 +513,7 @@ Utilizar tendências temporais para:
      
    - Execute o script:  
      ```powershell
-     python analise_de_vendas_Superstore.py
+     python Analise_de_vendas_Superstore2.py
      ```
 
 4. **Resultado**  
@@ -523,7 +523,7 @@ Utilizar tendências temporais para:
 ---
 
 ## 📂 Estrutura do Projeto
-- `analise_de_vendas_Superstore.py` → Script principal de análise  
+- `Analise_de_vendas_Superstore2.py` → Script principal de análise  
 - `Sample - Superstore.csv` → Dataset original  
 - `dados_tratados.csv` → Dataset tratado e exportado  
 
