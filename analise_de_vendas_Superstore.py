@@ -10,12 +10,11 @@ Original file is located at
 **Projeto:** Superstore, analisando dados.
 """
 
-!pip install plotly --quiet
-
 """# Bibliotecas para manipulação de dados"""
 
 import pandas as pd
 import numpy as np
+import plotly.express as px
 
 """# Bibliotecas para visualização"""
 
@@ -34,9 +33,9 @@ plt.rcParams["font.size"] = 12
 Realizado o upload do arquivo e carregamento do dataset em um DataFrame do pandas.
 """
 
-from google.colab import files
+df = pd.read_csv("Sample - Superstore.csv", encoding="latin1")
 
-arquivo = files.upload()
+print(df.head())
 
 """#Exploração Inicial
 Examinando a estrutura do dataset: <br>
@@ -52,13 +51,11 @@ print("=" * 60)
 print("PRIMEIRAS 5 LINHAS DO DATASET")
 print("=" * 60)
 
-# Obtém o nome do arquivo dos arquivos carregados
-nome_arquivo = next(iter(arquivo))
+
 
 # Lê o arquivo CSV em um DataFrame do pandas, especificando a codificação latin1
-df = pd.read_csv(nome_arquivo, encoding='latin1')
-
-display(df.head())
+df = pd.read_csv("Sample - Superstore.csv", encoding="latin1")
+print(df.head())
 
 """#Informações gerais sobre o dataset"""
 
@@ -72,7 +69,7 @@ df.info()
 print("\n" + "=" * 60)
 print("ESTATÍSTICAS DESCRITIVAS")
 print("=" * 60)
-display(df.describe())
+print(df.describe())
 
 """#Verificação de valores nulos"""
 
@@ -82,7 +79,7 @@ print("=" * 60)
 nulos = df.isnull().sum()
 nulos_pct = (nulos / len(df) * 100).round(2)
 tabela_nulos = pd.DataFrame({'Quantidade': nulos, 'Percentual (%)': nulos_pct})
-display(tabela_nulos[tabela_nulos['Quantidade'] > 0])
+print(tabela_nulos[tabela_nulos['Quantidade'] > 0])
 
 """#Verificação de duplicatas"""
 
@@ -220,7 +217,7 @@ vendas_categoria = df.groupby('category').agg(
 print("=" * 60)
 print("VENDAS E LUCRO POR CATEGORIA")
 print("=" * 60)
-display(vendas_categoria)
+print(vendas_categoria)
 
 """# Gráfico de barras duplas"""
 
@@ -260,7 +257,7 @@ vendas_segmento = df.groupby('segment').agg(
 print("=" * 60)
 print("DESEMPENHO POR SEGMENTO DE CLIENTE")
 print("=" * 60)
-display(vendas_segmento)
+print(vendas_segmento)
 
 """# Gráfico de pizza — participação nas vendas"""
 
@@ -304,7 +301,7 @@ desconto_lucro = df.groupby('faixa_desconto', observed=False).agg(
     qtd=('profit', 'count')
 ).reset_index()
 
-display(desconto_lucro)
+print(desconto_lucro)
 
 """# Gráfico de dispersão — **Desconto** vs **Lucro**"""
 
@@ -372,7 +369,7 @@ fig.show()
 # Vendas por ano
 vendas_ano = df.groupby('ano')['sales'].sum().reset_index()
 print("\n Vendas totais por ano:")
-display(vendas_ano)
+print(vendas_ano)
 
 """#Correlação entre variáveis numéricas"""
 
@@ -422,7 +419,7 @@ print(f"Desconto Médio:          {desconto_medio:.2f}%")
 print("\n" + "=" * 60)
 print("PRIMEIRAS 5 LINHAS DA COLUNA 'order_date'")
 print("=" * 60)
-display(df['order_date'].head())
+print(df['order_date'].head())
 
 """#Resumo Executivo:
 
@@ -439,4 +436,4 @@ Com base na análise, as principais recomendações e pontos de atenção são:
 
 # Exportação do arquivo
 df.to_csv('dados_tratados.csv', index=False, encoding='utf-8-sig')
-files.download('dados_tratados.csv')
+print("Arquivo 'dados_tratados.csv' salvo com sucesso!")
